@@ -17,7 +17,7 @@ data object yang di memory.
 
 ## Bagaimana Linq berkerja?
 
-.NET(C#,VB.NET, others) --> LINQ QUERIES --> LINQ PROVIDERS --> DATA SOURCE
+.NET(csharp,VB.NET, others) --> LINQ QUERIES --> LINQ PROVIDERS --> DATA SOURCE
 
 Linq menggunakan Linq Providers sebagai jembatan antaran Linq Query dengan datasource.
 Linq Providers akan menerjemahkan dari Linq Query ke Query DataSource yang di tuju.
@@ -82,18 +82,18 @@ where CONDITION
 select OBJECT).Method()
 ----------------------------------------------------------------------------------------------------------------------------
 
-# IENUMERABLE dan IQUERYABLE di C#
+# IENUMERABLE dan IQUERYABLE di csharp
 
 Pada code 001_Contoh.cs, terdapat code seperti ini:
 
-```c#
+```csharp
 var QuerySyntax = from obj in integerList
 				where obj > 5
 				select obj;
 ```
 Jika didebug, maka variable QuerySyntax bertipe "IEnumberable<int> QuerySyntax"
 Jadi, code di atas bisa juga di tulis seperti ini:
-```c#
+```csharp
 
 IEnumberable<int> QuerySyntax = from obj in integerList
 								where obj > 5
@@ -107,7 +107,7 @@ Interface ini memiliki satu method bernama GetEnumerator, yg akan me-return IEnu
 Interace IEnumarable memilki child class generic interface yaitu IEnumerable<T>
 
 Penting untuk di ingat:
-semua class collection baik generin dan non generic yg ada di c# mengimplementasi interface IEnumerable.
+semua class collection baik generin dan non generic yg ada di csharp mengimplementasi interface IEnumerable.
 
 Note:
 IEnumerable dan IEnumerable<T> seharusnya hanya digunakan untuk data memory object. nanti di bahas gengs.
@@ -187,7 +187,7 @@ Projection method/operator ada dua:
 ### Select All (Select *)
 ----------------------------------------------------------------------------------------------------------------------------
 Contoh query syntax seperti di bawah ini:
-```c#
+```csharp
 IEnumerable<Employee> querySyntax = (from emp in Employee.GetEmployees()
 									select emp);
 ```
@@ -196,19 +196,19 @@ Untuk meng-execute query yang sudah di buat, kita perlu method tambahan yaitu To
 Jika kita tidak menggunakan method ToList() maka tipe data hanya menjadi IEnumerable<Employee>
 Contoh execute query syntax seperti di bawah ini:
 
-```c#			
+```csharp			
 List<Employee> querySyntax = (from emp in Employee.GetEmployees()
 							select emp).ToList();
 ```
 Contoh execute method syntax seperti di bawah ini:
-```c#
+```csharp
 IEnumerable<Employee> methodSyntax = Employee.GetEmployee().ToList();
 ```
 
 ### Select Single Property
 
 query syntax
-```c#
+```csharp
 List<int> querySyntax = (from emp in Employee.GetEmployees()
 						select emp.ID).ToList();
 ```
@@ -216,7 +216,7 @@ pada code di atas, kita menggunakan List<int> karena kita memanggil method ToLis
 juga query nya, jadi bisa di tampung di List<int> 
 
 method syntax
-```c#
+```csharp
 IEnumerable<int> methodSyntax = Employee.GetEmployees().Select(emp => emp.ID);
 ```
 sedangkan pada contoh code di atas, kita tidak bisa menggunakan List<int>, tetapi harus menggunakan IEnumerable<int> karna
@@ -225,7 +225,7 @@ meng execute query tersebut menggunakan foreach
 
 ### Select Multiple Property
 query syntax
-```c#
+```csharp
 IEnumerable<Employee> selectQuery = (from emps in Employee.GetEmployees()
 									select new Employee()
 									{
@@ -236,7 +236,7 @@ IEnumerable<Employee> selectQuery = (from emps in Employee.GetEmployees()
 ```
 
 method syntax
-```c#
+```csharp
 List<Employee> methodQuery = Employee.GetEmployees().
 								Select(emps => new Employee()
 								{
