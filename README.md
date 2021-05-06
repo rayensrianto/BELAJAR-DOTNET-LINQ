@@ -1,7 +1,7 @@
 
-#### ARSITEKTUR LINQ
+# ARSITEKTUR LINQ
 
-#- Linq adalah?
+## Linq adalah?
 
 Linq adalah Language Integrated Query.
 Dengan linq, sebuah query dapat di gunakan untuk mendapatkan data dari berbagai jenis datasource,
