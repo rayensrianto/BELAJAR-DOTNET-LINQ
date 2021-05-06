@@ -15,7 +15,7 @@ query syntax Oracle.
 3. Jika aplikasi membutuhkan data object yang ada di memory seperti List, maka kita harus mengerti cara mengolah 
 data object yang di memory.
 
-#- Bagaimana Linq berkerja?
+## Bagaimana Linq berkerja?
 
 .NET(C#,VB.NET, others) --> LINQ QUERIES --> LINQ PROVIDERS --> DATA SOURCE
 
@@ -30,7 +30,7 @@ Berikut contoh beberapa Linq Provider yang sudah tersedia saat ini:
 2. Linq To SQL (DLINQ): untuk mengolah data dari Sql Server
 3. dsbg
 
-#- Kekurangan dan Kelebihan LINQ.
+## Kekurangan dan Kelebihan LINQ.
 Kelebihan
 ++ kita tidak perlu mempelajarin syntax query yang berbeda-beda dari datasource yang berbeda-beda.
 ++ code yang di tulis lebih sedikit
@@ -42,16 +42,14 @@ Kekurangan
 -- linq tidak support sql feautre seperti cache execution seperti store proc
 -- akan sangat mempengaruhi performa apps jika tidak di tulis dgn baik dan benar
 -- jika kita mengubah code linq, maka kita harus mengcompile apps ulang dan redeploy
-----------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------
 
-### CARA MENULIS LINQ QUERY
+# CARA MENULIS LINQ QUERY
 
 Ada 3 cara dalam membuat atau menulis query Linq.
 Secara performa, ke 3 cara ini tidak ada perbedaan nya.
 Tetapi, linq query selalu di transalte dulu menjadi lambda expression sebelum di compile.
 
-1. Linq Query Syntax
+## 1. Linq Query Syntax
 Ini adalah cara termudah untuk membuat linq query, karena hampir mirip dengan sql query.
 
 format nya adalah seperti dibawah ini:
@@ -62,7 +60,7 @@ select OBJECT
 contoh: 001_Contoh_LinqQuerySyntax.cs
 
 
-2. Linq Method Syntax
+## 2. Linq Method Syntax
 Method Syntax menggunakan lambda expression untuk mendefiniskan condition query.
 Biasanya digunakan untuk keperlua read data source.
 
@@ -71,7 +69,7 @@ DATASOURCE.CONDITIONMETHOD().SELECTIONMETHOD()
 
 contoh: 002.cs
 
-3. Linq Mixed Syntax
+## 3. Linq Mixed Syntax
 Ini adalah kombinasi antara Query Syntax dengan Method Syntax
 
 format nya:
@@ -79,9 +77,8 @@ format nya:
 where CONDITION 
 select OBJECT).Method()
 ----------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------
 
-### IENUMERABLE dan IQUERYABLE di C#
+# IENUMERABLE dan IQUERYABLE di C#
 
 Pada code 001_Contoh.cs, terdapat code seperti ini:
 
