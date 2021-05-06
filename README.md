@@ -55,6 +55,7 @@ Tetapi, linq query selalu di transalte dulu menjadi lambda expression sebelum di
 Ini adalah cara termudah untuk membuat linq query, karena hampir mirip dengan sql query.
 
 format nya adalah seperti dibawah ini:
+
 from OBJECT in DATASOURCE
 where CONDITION
 select OBJECT
@@ -67,6 +68,7 @@ Method Syntax menggunakan lambda expression untuk mendefiniskan condition query.
 Biasanya digunakan untuk keperlua read data source.
 
 formatnya:
+
 DATASOURCE.CONDITIONMETHOD().SELECTIONMETHOD()
 
 contoh: 002.cs
