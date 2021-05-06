@@ -82,10 +82,11 @@ select OBJECT).Method()
 
 Pada code 001_Contoh.cs, terdapat code seperti ini:
 
-		var QuerySyntax = from obj in integerList
-							where obj > 5
-							select obj;
-
+```c#
+var QuerySyntax = from obj in integerList
+				where obj > 5
+				select obj;
+```
 Jika didebug, maka variable QuerySyntax bertipe "IEnumberable<int> QuerySyntax"
 Jadi, code di atas bisa juga di tulis seperti ini:
 
