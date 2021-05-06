@@ -91,12 +91,14 @@ var QuerySyntax = from obj in integerList
 ```
 Jika didebug, maka variable QuerySyntax bertipe "IEnumberable<int> QuerySyntax"
 Jadi, code di atas bisa juga di tulis seperti ini:
+```c#
 
-		IEnumberable<int> QuerySyntax = from obj in integerList
-									where obj > 5
-									select obj;
+IEnumberable<int> QuerySyntax = from obj in integerList
+								where obj > 5
+								select obj;
+```
 
-1. Apa itu IEnumberable?
+## Apa itu IEnumberable?
 IEnumberable adalah sebuah interface yang terdapat pada namespace System.Collection.
 Tipe dari interface ini adalah Iterator Design Pattern, artinya kita bisa membuat iterasi/pengulangan dari tipe IEnumerable.
 Interface ini memiliki satu method bernama GetEnumerator, yg akan me-return IEnumerator yang meng iterasi collection
@@ -111,7 +113,7 @@ IEnumerable dan IEnumerable<T> seharusnya hanya digunakan untuk data memory obje
 Contoh: 004.Contoh.cs
 
 
-2. Apa itu IQueryable?
+## Apa itu IQueryable?
 IQueryable adalah sebuah interface yang terdapat pada namespace System.Linq
 Interface ini merupakan turunan dari Interface IEnumerable, sehingga kita menyimpan IQueryable ke dalam variable IEnumerable.
 Interace ini memiliki property bernama Porvider, dan property ini bertipe Interface IQueryProvider.
@@ -121,7 +123,7 @@ Jadi ini pilihan terbaik untuk data provider lain seperti Linq To SQL, Linq To E
 Contoh code: 005_Contoh_IQueryAble.cs
 
 
-3. Perbedaan antara IEnumerable dengan IQueryable ?
+# Perbedaan antara IEnumerable dengan IQueryable ?
 IEnumerable:
 - IEnumerable adalah sebuah interface yg berasal dari namespace System.Collection
 - Saat melakukan query data dari database, IEnumerable meng eksekusi "select statement" di server side(database server)
@@ -141,73 +143,72 @@ setelah itu baru di retrieve data nya.
 ----------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------
 
-### LINQ OPERATOR
+# LINQ OPERATOR
 
-1. Apa itu Linq Operator?
+## 1. Apa itu Linq Operator?
 Adalah kumpulan-kumpulan extension method linq yang dapat digunakan untuk membuat query linq.
 Extension method linq ini terdapat banyak fitur yang bisa di apply ke datasource.
 Antara lain seperti: filtering data, sorting data, grouping data, dsbg.
 
 Di Linq, operator di bagi beberapa kategori, antara lain:
 
-Projection Operators
-Ordering Operators
-Filtering Operators
-Set Operators
-Quantifier Operators
-Grouping Operators
-Partitioning Operators
-Equality Operators
-Element Operators
-Conversion Operators
-Concatenation Operators
-Aggregation Operators
-Generation Operators
-Join Operators
-Custom Sequence Operators
-Miscellaneous Operators
+- Projection Operators
+- Ordering Operators
+- Filtering Operators
+- Set Operators
+- Quantifier Operators
+- Grouping Operators
+- Partitioning Operators
+- Equality Operators
+- Element Operators
+- Conversion Operators
+- Concatenation Operators
+- Aggregation Operators
+- Generation Operators
+- Join Operators
+- Custom Sequence Operators
+- Miscellaneous Operators
 ----------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------
 
-### PROJECTION OPERATOS (Select Data)
+# PROJECTION OPERATOS (Select Data)
 
-1. Apa itu Projection Operator?
+## 1. Apa itu Projection Operator?
 Adalah mekanisme yang digunakan untuk melakukan select terhadap data source.
 Projection method/operator ada dua:
 	1. Select
 	2. SelectMany
 
 
-2. Select Operator
+## 2. Select Operator
 
-- Select All (Select *)
+### Select All (Select *)
 ----------------------------------------------------------------------------------------------------------------------------
 Contoh query syntax seperti di bawah ini:
-
+```c#
 			IEnumerable<Employee> querySyntax = (from emp in Employee.GetEmployees()
 											     select emp);
-----------------------------------------------------------------------------------------------------------------------------
+```
 Contoh di atas adalah kita hanya membuat sebuah query tetapi tidak di execute.
 Untuk meng-execute query yang sudah di buat, kita perlu method tambahan yaitu ToList() atau kita loop dengan foreach loop.
 Jika kita tidak menggunakan method ToList() maka tipe data hanya menjadi IEnumerable<Employee>
-
 Contoh execute query syntax seperti di bawah ini:
-----------------------------------------------------------------------------------------------------------------------------
-			List<Employee> querySyntax = (from emp in Employee.GetEmployees()
-											     select emp).ToList();
-----------------------------------------------------------------------------------------------------------------------------
-Contoh execute method syntax seperti di bawah ini:
-----------------------------------------------------------------------------------------------------------------------------
-			IEnumerable<Employee> methodSyntax = Employee.GetEmployee().ToList();
-----------------------------------------------------------------------------------------------------------------------------
 
-- Select Single Property
+```c#			List<Employee> querySyntax = (from emp in Employee.GetEmployees()
+											     select emp).ToList();
+```
+Contoh execute method syntax seperti di bawah ini:
+```c#
+			IEnumerable<Employee> methodSyntax = Employee.GetEmployee().ToList();
+```
+
+### Select Single Property
 
 query syntax
-----------------------------------------------------------------------------------------------------------------------------
+```c#
 			List<int> querySyntax = (from emp in Employee.GetEmployees()
 								 select emp.ID).ToList();
-----------------------------------------------------------------------------------------------------------------------------
+```
 pada code di atas, kita menggunakan List<int> karena kita memanggil method ToList(), sehingga langsung di execute saat itu 
 juga query nya, jadi bisa di tampung di List<int> 
 
@@ -219,9 +220,9 @@ sedangkan pada contoh code di atas, kita tidak bisa menggunakan List<int>, tetap
 query tersebut belum di execute, kita tidak memanggil method ToList() pada method tersebut. meskipun begitu, kita bisa tetap 
 meng execute query tersebut menggunakan foreach
 
-- Select Multiple Property
+### Select Multiple Property
 query syntax
-----------------------------------------------------------------------------------------------------------------------------
+```c#
 			IEnumerable<Employee> selectQuery = (from emps in Employee.GetEmployees()
 											 select new Employee()
 											 {
@@ -229,10 +230,10 @@ query syntax
 											 	LastName = emps.LastName,
 											 	Salary = emps.Salary
 											 });
-----------------------------------------------------------------------------------------------------------------------------
+```
 
 method syntax
-----------------------------------------------------------------------------------------------------------------------------
+```c#
 					List<Employee> methodQuery = Employee.GetEmployees().
 											 Select(emps => new Employee()
 											 {
@@ -240,7 +241,7 @@ method syntax
 											 	LastName = emps.LastName,
 											 	Salary = emps.Salary
 											 }).ToList();
-----------------------------------------------------------------------------------------------------------------------------
+```
 
 ----------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------
