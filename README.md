@@ -31,17 +31,19 @@ Berikut contoh beberapa Linq Provider yang sudah tersedia saat ini:
 3. dsbg
 
 ## Kekurangan dan Kelebihan LINQ.
+
 Kelebihan
-++ kita tidak perlu mempelajarin syntax query yang berbeda-beda dari datasource yang berbeda-beda.
-++ code yang di tulis lebih sedikit
-++ support intelligence di vistud
-++ linq providers menyediakan method untuk filtering, ordering, grouping dsbg
-++ query dapat digunakan kembali/reused
+* kita tidak perlu mempelajarin syntax query yang berbeda-beda dari datasource yang berbeda-beda.
+* code yang di tulis lebih sedikit
+* support intelligence di vistud
+* linq providers menyediakan method untuk filtering, ordering, grouping dsbg
+* query dapat digunakan kembali/reused
+
 Kekurangan
--- linq sulit digunakan untuk menulis query yang rumit
--- linq tidak support sql feautre seperti cache execution seperti store proc
--- akan sangat mempengaruhi performa apps jika tidak di tulis dgn baik dan benar
--- jika kita mengubah code linq, maka kita harus mengcompile apps ulang dan redeploy
+* linq sulit digunakan untuk menulis query yang rumit
+* linq tidak support sql feautre seperti cache execution seperti store proc
+* akan sangat mempengaruhi performa apps jika tidak di tulis dgn baik dan benar
+* jika kita mengubah code linq, maka kita harus mengcompile apps ulang dan redeploy
 
 # CARA MENULIS LINQ QUERY
 
