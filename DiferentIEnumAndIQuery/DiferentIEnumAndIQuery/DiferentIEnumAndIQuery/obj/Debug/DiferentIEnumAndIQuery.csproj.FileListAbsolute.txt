@@ -1,0 +1,12 @@
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\DiferentIEnumAndIQuery.exe.config
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\DiferentIEnumAndIQuery.exe
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\DiferentIEnumAndIQuery.pdb
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\EntityFramework.dll
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\EntityFramework.SqlServer.dll
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\EntityFramework.xml
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\bin\Debug\EntityFramework.SqlServer.xml
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\obj\Debug\DiferentIEnumAndIQuery.csprojAssemblyReference.cache
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\obj\Debug\DiferentIEnumAndIQuery.csproj.CoreCompileInputs.cache
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\obj\Debug\DiferentIEnumAndIQuery.csproj.CopyComplete
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\obj\Debug\DiferentIEnumAndIQuery.exe
+D:\Source\CodeCSharp\LINQ\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\DiferentIEnumAndIQuery\obj\Debug\DiferentIEnumAndIQuery.pdb
