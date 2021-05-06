@@ -188,36 +188,37 @@ Projection method/operator ada dua:
 ----------------------------------------------------------------------------------------------------------------------------
 Contoh query syntax seperti di bawah ini:
 ```c#
-			IEnumerable<Employee> querySyntax = (from emp in Employee.GetEmployees()
-											     select emp);
+IEnumerable<Employee> querySyntax = (from emp in Employee.GetEmployees()
+									select emp);
 ```
 Contoh di atas adalah kita hanya membuat sebuah query tetapi tidak di execute.
 Untuk meng-execute query yang sudah di buat, kita perlu method tambahan yaitu ToList() atau kita loop dengan foreach loop.
 Jika kita tidak menggunakan method ToList() maka tipe data hanya menjadi IEnumerable<Employee>
 Contoh execute query syntax seperti di bawah ini:
 
-```c#			List<Employee> querySyntax = (from emp in Employee.GetEmployees()
-											     select emp).ToList();
+```c#			
+List<Employee> querySyntax = (from emp in Employee.GetEmployees()
+							select emp).ToList();
 ```
 Contoh execute method syntax seperti di bawah ini:
 ```c#
-			IEnumerable<Employee> methodSyntax = Employee.GetEmployee().ToList();
+IEnumerable<Employee> methodSyntax = Employee.GetEmployee().ToList();
 ```
 
 ### Select Single Property
 
 query syntax
 ```c#
-			List<int> querySyntax = (from emp in Employee.GetEmployees()
-								 select emp.ID).ToList();
+List<int> querySyntax = (from emp in Employee.GetEmployees()
+						select emp.ID).ToList();
 ```
 pada code di atas, kita menggunakan List<int> karena kita memanggil method ToList(), sehingga langsung di execute saat itu 
 juga query nya, jadi bisa di tampung di List<int> 
 
 method syntax
-----------------------------------------------------------------------------------------------------------------------------
-			IEnumerable<int> methodSyntax = Employee.GetEmployees().Select(emp => emp.ID);
-----------------------------------------------------------------------------------------------------------------------------
+```c#
+IEnumerable<int> methodSyntax = Employee.GetEmployees().Select(emp => emp.ID);
+```
 sedangkan pada contoh code di atas, kita tidak bisa menggunakan List<int>, tetapi harus menggunakan IEnumerable<int> karna
 query tersebut belum di execute, kita tidak memanggil method ToList() pada method tersebut. meskipun begitu, kita bisa tetap 
 meng execute query tersebut menggunakan foreach
@@ -225,24 +226,24 @@ meng execute query tersebut menggunakan foreach
 ### Select Multiple Property
 query syntax
 ```c#
-			IEnumerable<Employee> selectQuery = (from emps in Employee.GetEmployees()
-											 select new Employee()
-											 {
-											 	FirstName = emps.FirstName,
-											 	LastName = emps.LastName,
-											 	Salary = emps.Salary
-											 });
+IEnumerable<Employee> selectQuery = (from emps in Employee.GetEmployees()
+									select new Employee()
+									{
+										FirstName = emps.FirstName,
+										LastName = emps.LastName,
+										Salary = emps.Salary
+									});
 ```
 
 method syntax
 ```c#
-					List<Employee> methodQuery = Employee.GetEmployees().
-											 Select(emps => new Employee()
-											 {
-											 	FirstName = emps.FirstName,
-											 	LastName = emps.LastName,
-											 	Salary = emps.Salary
-											 }).ToList();
+List<Employee> methodQuery = Employee.GetEmployees().
+								Select(emps => new Employee()
+								{
+									FirstName = emps.FirstName,
+									LastName = emps.LastName,
+									Salary = emps.Salary
+								}).ToList();
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------
