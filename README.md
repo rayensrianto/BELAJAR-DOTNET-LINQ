@@ -43,6 +43,7 @@ Kekurangan
 * linq tidak support sql feautre seperti cache execution seperti store proc
 * akan sangat mempengaruhi performa apps jika tidak di tulis dgn baik dan benar
 * jika kita mengubah code linq, maka kita harus mengcompile apps ulang dan redeploy
+
 <br>
 <hr/>
 
@@ -75,6 +76,9 @@ contoh: 002.cs
 
 ## 3. Linq Mixed Syntax
 Ini adalah kombinasi antara Query Syntax dengan Method Syntax
+
+<br>
+<hr/>
 
 # IENUMERABLE dan IQUERYABLE di csharp
 
@@ -118,6 +122,8 @@ Jadi ini pilihan terbaik untuk data provider lain seperti Linq To SQL, Linq To E
 
 Contoh code: 005_Contoh_IQueryAble.cs
 
+<br>
+<hr/>
 
 # Perbedaan antara IEnumerable dengan IQueryable ?
 IEnumerable:
@@ -136,8 +142,9 @@ setelah itu baru di retrieve data nya.
 - IQueryable paling banyak digunakan untuk Linq To Sql dan Linq To Entities
 - Support custom queries dengan menggunakan method CreateQuery dan Executes Method.
 - Support lazy loading
-----------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------
+
+<br>
+<hr/>
 
 # LINQ OPERATOR
 
@@ -164,8 +171,9 @@ Di Linq, operator di bagi beberapa kategori, antara lain:
 - Join Operators
 - Custom Sequence Operators
 - Miscellaneous Operators
-----------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------
+
+<br>
+<hr/>
 
 # PROJECTION OPERATOS (Select Data)
 
