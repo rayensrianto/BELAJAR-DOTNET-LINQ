@@ -1,4 +1,3 @@
-
 # ARSITEKTUR LINQ
 
 ## Linq adalah?
@@ -62,7 +61,6 @@ select OBJECT
 
 contoh: 001_Contoh_LinqQuerySyntax.cs
 
-
 ## 2. Linq Method Syntax
 Method Syntax menggunakan lambda expression untuk mendefiniskan condition query.
 Biasanya digunakan untuk keperlua read data source.
@@ -75,12 +73,6 @@ contoh: 002.cs
 
 ## 3. Linq Mixed Syntax
 Ini adalah kombinasi antara Query Syntax dengan Method Syntax
-
-format nya:
-(from OBJECT in DataSource
-where CONDITION 
-select OBJECT).Method()
-----------------------------------------------------------------------------------------------------------------------------
 
 # IENUMERABLE dan IQUERYABLE di csharp
 
