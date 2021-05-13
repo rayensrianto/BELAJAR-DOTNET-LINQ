@@ -43,6 +43,8 @@ Kekurangan
 * linq tidak support sql feautre seperti cache execution seperti store proc
 * akan sangat mempengaruhi performa apps jika tidak di tulis dgn baik dan benar
 * jika kita mengubah code linq, maka kita harus mengcompile apps ulang dan redeploy
+<br>
+<hr/>
 
 # CARA MENULIS LINQ QUERY
 
