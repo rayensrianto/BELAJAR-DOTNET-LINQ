@@ -177,9 +177,21 @@ Method nya kita beri nama GetWordCount() dimana akan menghitung kata yang di pis
 Contohnya kalimat "Ryan Jago Ngoding", maka return nya adalah 3, karna ada 3 kata yang dipisahkan oleh spasi.
 Kita harus memanggil method ini dengan string object seperti dibawah ini.
 ```csharp
-public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, 
+int wordCount = sentence.GetWordCount();
 ```
-
+NOTE: kita tidak bisa memanggil method GetWordCount() secara langsung seperti di atas karna kita bukan pemilik class string. Class string terdapat di namespace System milik .Net Framework, jadi kita harus membungkus method itu di dalam class.
+```csharp
+public class ExtensionHelper
+{
+	public static int GetWordCount(string str)
+	{
+		if (!String.IsNullOrEmpty(str))
+			return str.Split(' ').Length;
+		
+		return 0;
+	}
+}
+```
 <br>
 <hr>
 
