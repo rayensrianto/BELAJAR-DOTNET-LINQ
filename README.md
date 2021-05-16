@@ -192,6 +192,11 @@ public class ExtensionHelper
 	}
 }
 ```
+Class ExtensionHelper pun belum cukup untuk membuat method GetWordCount() ini menjadi extension method dari class string. Kita harus meng konversi method ini menjadi extension method class string dengan cara:
+	1. Membuat class ExtensionHelper menjadi static.
+	2. Parameter pertama pada extension method adalah type/class yang di tuju dan di dahului dengan keyword this. (this string str)
+Contoh: 008_ExtensionMethod.cs
+
 <br>
 <hr>
 
@@ -331,4 +336,9 @@ Where dan OFType.
 "where" selalu membutuhkan minimal 1 condition, dan kita menggunakan predicates untuk menentukan condition.
 Condition dapat ditulis dengan symbol: ==, >=, <=, &&, ||, >, < dst
 
+Ada dua overloaded version untuk "where" operator, yaitu:
+
+```csharp
+public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource>, Func<Tsource, bool> predicate);
+```
 
