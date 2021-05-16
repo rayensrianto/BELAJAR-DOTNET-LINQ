@@ -91,11 +91,11 @@ var QuerySyntax = from obj in integerList
 ```
 Jika didebug, maka variable QuerySyntax bertipe "IEnumberable<int> QuerySyntax"
 Jadi, code di atas bisa juga di tulis seperti ini:
-```csharp
 
+```csharp
 IEnumberable<int> QuerySyntax = from obj in integerList
-								where obj > 5
-								select obj;
+							where obj > 5
+							select obj;
 ```
 
 ## Apa itu IEnumberable?
@@ -125,7 +125,8 @@ Contoh code: 005_Contoh_IQueryAble.cs
 <br>
 <hr/>
 
-# Perbedaan antara IEnumerable dengan IQueryable ?
+# PERBEDAAN ANTARA IENUMERABLE DENGAN IQUERYABLE ?
+
 IEnumerable:
 - IEnumerable adalah sebuah interface yg berasal dari namespace System.Collection
 - Saat melakukan query data dari database, IEnumerable meng eksekusi "select statement" di server side(database server)
@@ -145,6 +146,42 @@ setelah itu baru di retrieve data nya.
 
 <br>
 <hr/>
+
+# LINQ EXTENSION METHOD DI C#
+Linq operator seperti select, where dsg, di implementasi di class Enumerable.
+Method ini di implementasikan sebagai extension method yang bertipe interface IEnumerable<T>.
+Mari kita mengerti dengan contoh.
+
+```csharp
+List<int> intList = new List<int> {1,2,3,4,5,6};
+
+IEnumerable<int> EvenNumbers = intList.Where(n => n % 2 == 0);
+```
+Method Where() di atas bukan milik List<T>, tapi kenapa bisa memanggil method Where() menggunakan object List<T> ?
+Jika kita go to definition method Where(), maka akan muncul seperti dibawah ini.
+```csharp
+public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, 
+```
+Seperti yang terlihat code di atas, method Where() di implementasi sebagai extension method pada interface IEnumerable<T>.
+Dan kita tahu bahwa List<T> mengimplementasi interface IEnumerable<T>.
+Ini lah kenapa ita bisa memanggil method Where() menggunakan object List<T>.
+
+## Apa Itu Extension Method ??
+Menurut MSDN, Extension Method memungkinkan kita untuk menambahkan method ke type/class yang sudah ada tanpa membuat type/class turunan yang baru, recompiling dan memodifikasi class/type tersebut.
+Dengan kata lain, extension method  digunakan untuk pendekatan penambahan fungsionalitas pada sebuah class  dengan menambahkan method baru di masa depan jika code nya belum ada di class tersebut atau kita tidak memiliki permission untuk mengubah class tersebut.
+
+## Bagaimana Cara Mengimplementasi Extension Method di C# ??
+Mari kita pahami dengan sebuah contoh dan practice.
+Permintaan nya adalah, kita menambahkan sebuah method baru terhadap class string bawaan.
+Method nya kita beri nama GetWordCount() dimana akan menghitung kata yang di pisahkan oleh spasi pada sebuah kalimat.
+Contohnya kalimat "Ryan Jago Ngoding", maka return nya adalah 3, karna ada 3 kata yang dipisahkan oleh spasi.
+Kita harus memanggil method ini dengan string object seperti dibawah ini.
+```csharp
+public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, 
+```
+
+<br>
+<hr>
 
 # LINQ OPERATOR
 
@@ -255,3 +292,31 @@ List<Employee> methodQuery = Employee.GetEmployees().
 
 SelectMany method digunakan untuk menjorok setiap element dari sebuah urutuan ke IEnumerable<T> dan meratakan urutan yang di hasilkan
 menjadi satu urutan saja.
+Tentu sulit di mengerti bila tanpa contoh dan praktik, lets go to practice!
+
+## Contoh 1
+Code : 007_Contoh_SelectMany.cs 
+Method: Sample1();
+
+Pada code di contoh 1, method SelectMany mengembalikan sebuah IEnumerable<char>, karena method SelectMany mengembalikan semua element dari sebuah urutan. Di contoh yang sebagai urutan adalah List, dan list ini mengandung 2 string, jadi SelectMany mengambil semua karakter yang ada pada dua string tersebut dan menjadikan nya satu urutan/sequence.
+
+<br>
+<hr>
+
+# WHERE FILTERING OPERATOR
+
+## Apa itu Filtering?
+Filtering adalah mendapatkan data sesuai dengan yang di inginkan dari data source.
+Contoh:
+	- mendapatkan data karyawan yang memiliki gaji lebih besar dari Rp. 5.000.000,-
+	- mendapatkan data siswa yang memiliki usia paling muda
+	- dsbg
+
+## Method apa yang tersedia untuk filtering di LINQ?
+Where dan OFType.
+
+## Where Filtering Operators in LINQ
+"where" selalu membutuhkan minimal 1 condition, dan kita menggunakan predicates untuk menentukan condition.
+Condition dapat ditulis dengan symbol: ==, >=, <=, &&, ||, >, < dst
+
+
