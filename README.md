@@ -339,6 +339,21 @@ Condition dapat ditulis dengan symbol: ==, >=, <=, &&, ||, >, < dst
 Ada dua overloaded version untuk "where" operator, yaitu:
 
 ```csharp
-public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource>, Func<Tsource, bool> predicate);
+public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<Tsource, bool> predicate);
+
+public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<Tsource, int, bool> predicate)
 ```
+Seperti yang kita lihat di atas bahwa method Where() adalah extension method dari IEnumerable<T> dan predicate sebagai parameternya.
+
+## Apa itu Predicate?
+Predicate adalah sebuah function yang digunakan untuk memeriksa setiap elemen yang di beri condition.
+Contoh, ada sebuah lambda expression (num => num > 5) yang akan memeriksa sebuah "intList" collection.
+Lambda expression ini akan mengecheck angka yang mana yang lebih besar dari 5, jika angka nya lebih besar dari 5 maka akan me- return bolean bernilai true, dan sebalik nya.
+
+Contoh code: 009
+
+Predicate (Func<Tsource, int, bool> predicate) memerlukan satu input parameter bertipe int dan me-return bolean.
+Func ini adalah generic delegate yang mengambil satu atau lebih input parameter dan akan mengembalikan satu parameter.
+Parameter di anggap sebagai return value. Return type nya mandatory sedangkan input parameter nya tidak.
+Untuk memahami ini lebih lanjut, kita harus pelajarin Generic Delegate disini: https://dotnettutorials.net/lesson/generic-delegates-csharp/
 
