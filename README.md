@@ -357,3 +357,17 @@ Func ini adalah generic delegate yang mengambil satu atau lebih input parameter 
 Parameter di anggap sebagai return value. Return type nya mandatory sedangkan input parameter nya tidak.
 Untuk memahami ini lebih lanjut, kita harus pelajarin Generic Delegate disini: https://dotnettutorials.net/lesson/generic-delegates-csharp/
 
+Lambda expression yang kita lempar ke Whre Extension Method pada contoh code 009 adalah operator bertipe integer dan akan mengembalikan nilai boolean, jika tidak maka akan mendapatkan compile time error.
+Perhatikan code dibawah ini:
+
+```csharp
+IEnumerable<int> filteredData = intList.Where(num => num > 5);
+```
+code di atas bisa juga di tulis seperti ini:
+```csharp
+Func<int, bool> predicate = i => i > 5;
+
+IEnumerable<int> filteredData = intList.Where(predicate);
+```
+
+Contoh code pada file 010 juga akan menghasilkan hasil yang sama dengan file 009
