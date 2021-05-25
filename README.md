@@ -371,3 +371,34 @@ IEnumerable<int> filteredData = intList.Where(predicate);
 ```
 
 Contoh code pada file 010 juga akan menghasilkan hasil yang sama dengan file 009
+
+## Contoh 2
+Versi kedua dari overloaded version extension method Where, parameter int pada predicate function menggambarkan index position element sumber nya.
+Contoh menampilkan index position pada overload extension method where yang ke dua.
+(011.cs)
+
+## Contoh 3
+Contoh ini lebih kompleks di banding sebelum nya.
+Contoh bisa di lihat pada file 012.cs
+
+<hr>
+
+# OFFTYPE OPERATOR
+Operator OfType di gunakan untuk melakukan filtering sepsifik tipe data dari sebuah data source berdasarkan tipe data yang kita lempar melalui operator ini.
+Contoh, pada sebuah collection memiliki data yang terdiri dari integer dan string, kita ingin mengambil data yang string saja atau integer saja dari collection ini, maka kita bisa menggunakan operator OfType ini.
+
+Misalnya kita memiliki collection ber tipe object, seperti yang kita tahu bahwa object class adalah superclass dari semua tipe data, jadi kita bisa meletakan tipe data apapun ke dalam nya.
+```csharp
+List<object> dataSource = new List<object> ()
+{
+	"Tom", "Jerry", 123, 321, 30, "Over"
+}
+```
+Lalu dari datasource di atas, kita ingin memanggil data dari collection yang hanya bertipe integer saja.
+```csharp
+List<int> intData = dataSource.offType<int>().ToList();
+```
+
+<hr>
+
+# SET OPERATOR DI LINQ
