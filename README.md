@@ -402,3 +402,28 @@ List<int> intData = dataSource.offType<int>().ToList();
 <hr>
 
 # SET OPERATOR DI LINQ
+
+Set operator pada LINQ digunakan untuk membuat sebuah hasil berdasarkan ada atau tidak ada nya element pada datasource yang sama atau datasource yang berbeda.
+
+## Contoh Set Operator
+Berikut beberapa contoh kasus dimana kita harus menggunakan set operators
+- jika kita ingin menampilkan distinct data dari data source.
+- misalnya kita butuh menampilkan semua karyawan dari sebuah perusahaan kecuali department tertentu.
+- misalnya kita memiliki banyak class dan kita ingin menampilkan semua data ter atas dari semua class tersebut.
+- misalnya kita memiliki datasource yang berbeda dengan strucktur yang mirip dan kita ingin menggabungkan semua data source menjadi satu data source.
+
+## Extension Method untuk Set Operators
+- Distinct
+	digunakan saat kita ingin menghilangkan duplicate data atau records dari sebuah data source. 
+	method ini digunakan pada satu data source
+- Except
+	digunakan saat kita ingin me-return semua element dari datasource A yang tidak dimiliki oleh datasource B.
+	method ini digunakan pada dua data source
+- Intesect
+	digunakan untuk menampilkan semua ement yang ada pada datasource A dan juga dimiliki oleh datasource B.
+- Union
+	digunakan untuk menampilkan semua element yang ada pada kedua data source dan menghasilkan satu result set.
+
+<hr>
+
+# LINQ Distinct Method
