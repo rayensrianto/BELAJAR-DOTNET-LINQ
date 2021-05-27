@@ -427,3 +427,6 @@ Berikut beberapa contoh kasus dimana kita harus menggunakan set operators
 <hr>
 
 # LINQ Distinct Method
+
+Distinct method digunakan untuk menghasilkan distinct element dari sebuah data source. 
+Ada dua overloaded version yang tersedia untuk distinct method.
